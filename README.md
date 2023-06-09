@@ -1,4 +1,4 @@
-# [HiT-GAN approach] Using vision transformer to synthesize computed tomography perfusion images in ischemic stroke patients 
+# HiT-GAN approach: Using vision transformer to synthesize computed tomography perfusion images in ischemic stroke patients 
 
 This approach is based on the Official TensorFlow Implementation of HiTGAN done by the authors of the NeurIPS 2021 paper "[Improved Transformer for High-Resolution GANs](https://arxiv.org/pdf/2106.07631.pdf)".
 
