@@ -1,3 +1,17 @@
+# [HiT-GAN approach] Using vision transformer to synthesize computed tomography perfusion images in ischemic stroke patients 
+
+## Environment setup
+
+```
+pip install -r requirements.txt
+```
+
+## Dataset setup
+The dataset should be in jpg format and in the resolution 256x256.
+
+tf.keras.utils.image_dataset_from_directory is used to read the dataset "(https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory)".
+
+
 # [HiT-GAN](https://arxiv.org/pdf/2106.07631.pdf) Official TensorFlow Implementation
 
 HiT-GAN presents a Transformer-based generator that is trained based on Generative Adversarial Networks (GANs). It achieves state-of-the-art performance for high-resolution image synthesis. Please check our NeurIPS 2021 paper "[Improved Transformer for High-Resolution GANs](https://arxiv.org/pdf/2106.07631.pdf)" for more details.
