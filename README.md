@@ -9,7 +9,23 @@ pip install -r requirements.txt
 ## Dataset setup
 The dataset should be in jpg format and in the resolution 256x256.
 
-tf.keras.utils.image_dataset_from_directory is used to read the dataset "(https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory)".
+tf.keras.utils.image_dataset_from_directory is used to read the dataset "(https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory)". And should therefor be in following structure:
+
+```
+main_directory/
+...patient_01/
+......patient_slice
+........image_01
+........image_02
+........
+...patient_02/
+......patient_slice_01
+........image_01
+........image_02
+........
+```
+
+
 
 
 # [HiT-GAN](https://arxiv.org/pdf/2106.07631.pdf) Official TensorFlow Implementation
