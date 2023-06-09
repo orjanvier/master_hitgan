@@ -61,7 +61,16 @@ For this the model have to be pretrained
 Akso there have to be done changes in the "recorded_checkpoint" finction
 
 ```
-python run.py --mode=generate_images --dataset=cifar10 --train_batch_size=2 --train_steps=500000 --image_crop_size=256 --image_crop_proportion=1.0 --save_every_n_steps=214 --latent_dim=512 --generator_lr=0.00005 --discriminator_lr=0.00005 --channel_multiplier=2 --use_consistency_regularization=True --data_dir=/bhome/ovier/master/hit-gan/data/Size_256/Original --model_dir=/bhome/ovier/master/hit-gan/exp/exp15 --use_tpu=False --use_ema_model=false --run_trough_dataset=30 --eval_batch_size=2
+python run.py --mode=generate_images --dataset=cifar10
+--train_batch_size=2 --train_steps=500000
+--image_crop_size=256 --image_crop_proportion=1.0 
+--save_every_n_steps=214 --latent_dim=512 
+--generator_lr=0.00005 --discriminator_lr=0.00005 
+--channel_multiplier=2 --use_consistency_regularization=True
+--data_dir=/bhome/ovier/master/hit-gan/data/Size_256/Original
+--model_dir=/bhome/ovier/master/hit-gan/exp/exp15 
+--use_tpu=False --use_ema_model=false --run_trough_dataset=30 
+--eval_batch_size=2
 ```
 
 
