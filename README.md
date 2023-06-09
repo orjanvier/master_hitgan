@@ -15,16 +15,54 @@ tf.keras.utils.image_dataset_from_directory is used to read the dataset "(https:
 main_directory/
 ...patient_01/
 ......patient_slice
-........image_01
-........image_02
-........
+.........image_01
+.........image_02
+.........
 ...patient_02/
 ......patient_slice_01
-........image_01
-........image_02
-........
+.........image_01
+.........image_02
+.........
 ```
 
+## Train model
+
+```
+python run.py --mode=train --train_batch_size=2 
+--train_steps=500000 --image_crop_size=256 
+--image_crop_proportion=1.0 --save_every_n_steps=1000
+--latent_dim=256 --generator_lr=0.00005
+--discriminator_lr=0.00005 --channel_multiplier=1 
+--use_consistency_regularization=True 
+--data_dir=/bhome/ovier/master/hit-gan/data/Size_256/Original 
+--model_dir=/bhome/ovier/master/hit-gan/exp/exp8 --use_tpu=False 
+--use_ema_model=false --grad_penalty_type=wgan --dataset=Original
+```
+
+
+## Evaluate model
+This can be done in parallell with the training or one time in the end 
+
+```
+python run.py --mode=eval --eval_batch_size=3 
+--dataset=cifar10 --train_batch_size=3 
+--train_steps=5000 --image_crop_size=256
+--image_crop_proportion=1.0 --save_every_n_steps=1000
+--latent_dim=512 --generator_lr=0.00005
+--discriminator_lr=0.00005 --channel_multiplier=2
+--use_consistency_regularization=True 
+--data_dir=/bhome/ovier/master/hit-gan/data/Size_256/Eval 
+--model_dir=/bhome/ovier/master/hit-gan/exp/exp1 
+--use_tpu=False --use_ema_model=false
+```
+
+## Generate images
+For this the model have to be pretrained 
+Akso there have to be done changes in the "recorded_checkpoint" finction
+
+```
+python run.py --mode=generate_images --dataset=cifar10 --train_batch_size=2 --train_steps=500000 --image_crop_size=256 --image_crop_proportion=1.0 --save_every_n_steps=214 --latent_dim=512 --generator_lr=0.00005 --discriminator_lr=0.00005 --channel_multiplier=2 --use_consistency_regularization=True --data_dir=/bhome/ovier/master/hit-gan/data/Size_256/Original --model_dir=/bhome/ovier/master/hit-gan/exp/exp15 --use_tpu=False --use_ema_model=false --run_trough_dataset=30 --eval_batch_size=2
+```
 
 
 
