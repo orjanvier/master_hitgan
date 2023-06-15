@@ -29,6 +29,10 @@ main_directory/
 
 ## Train model
 
+The argument --dataset are not in use.
+The argument --data_dir is the path to the dataset
+the argument -- model dir is where to store data
+
 ```
 python run.py --mode=train --train_batch_size=2 
 --train_steps=500000 --image_crop_size=256 
@@ -60,7 +64,7 @@ python run.py --mode=eval --eval_batch_size=3
 
 ## Generate images
 For this the model have to be pretrained 
-Akso there have to be done changes in the "recorded_checkpoint" finction
+Also there have to be done changes in the "recorded_checkpoint" finction
 
 ```
 python run.py --mode=generate_images --dataset=cifar10
